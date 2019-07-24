@@ -2,7 +2,7 @@
 
 There are loads of different ways to find things, here are some...
 
-## Greping the repo
+## Grepping the repo
 
 You can grep the whole repo for a string or regex. Here, we are searching for private keys:
 
@@ -34,3 +34,30 @@ git checkout b14ad8013463856f11a0e007d35590c2565b571a
 ```
 
 You can now browse the files as they were at the point they were committed.
+
+## Grepping the commit log
+
+As users usually put messages into the log every time they commit changes, you can search the log for keywords related to interesting things, here I'm searching for mentions of cert:
+
+```
+git log | grep -i -B 4 cert
+commit 47f30318537be9ade9320775c973ccd0312ddef5
+Author: Robin Wood <robin@digi.ninja>
+Date:   Wed Jul 24 21:11:43 2019 +0100
+
+    oops, certs shouldn't be in here
+--
+commit 35faa1406267e882cde54b0aaa783db4b784bb50
+Author: Robin Wood <robin@digi.ninja>
+Date:   Wed Jul 24 21:07:19 2019 +0100
+
+    reduced length of cert lifespan
+--
+commit 46311713093dae4b003f743a9fe7e159134ad52a
+Author: Robin Wood <robin@digi.ninja>
+Date:   Wed Jul 24 21:02:36 2019 +0100
+
+    Certs for the web site
+```
+
+And as above, you can use the commit ID to then checkout the files and have a look at them.
