@@ -2,3 +2,4 @@ Database:
     username: aname
     password: 999aaaa
     host: lekaydb
+    port: 3307 # keep those sneaky hackers out, they'll never spot it here
