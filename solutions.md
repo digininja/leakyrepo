@@ -61,3 +61,27 @@ Date:   Wed Jul 24 21:02:36 2019 +0100
 ```
 
 And as above, you can use the commit ID to then checkout the files and have a look at them.
+
+If you want to see what files were changed, you can do this:
+
+```
+git log --pretty=full --name-only --all
+commit 5fbc1813cc61f4f897c6729a479cdc2c6f97d7d5 (origin/settings, settings)
+Author: Robin <robin@digi.ninja>
+Commit: Robin <robin@digi.ninja>
+
+    stuff to find
+
+README.md
+
+commit aaa833ed453bf5d5818445018ade8dd317e0a8eb
+Author: Robin <robin@digi.ninja>
+Commit: Robin <robin@digi.ninja>
+
+    Updating the port number.
+
+    Moved the database to a different port to keep those sneaky hackers from
+    spotting it
+
+settings.yaml
+```
