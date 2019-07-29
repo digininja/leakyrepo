@@ -5,3 +5,6 @@ This repo will deliberately contain things that shouldn't be found in a a reposi
 ## Things to find
 
 * Two sets of TLS certificates, keys etc.
+* Some SSH keys
+* A set of AWS keys
+* Database credentials
