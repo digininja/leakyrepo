@@ -1,2 +1,4 @@
-name=aname
-password="999aaaa"
+Database:
+    username: aname
+    password: 999aaaa
+    host: lekaydb
