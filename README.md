@@ -10,3 +10,7 @@ For now, you can have a play with tools like [Gitrob](https://github.com/michenr
 * Some SSH keys
 * A set of AWS keys
 * Database credentials
+
+## Credits
+
+This repo is built on an original idea by [Kev](https://twitter.com/kev_bite) and [David](https://twitter.com/da_betteridge) which they presented in a workshop at [SteelCon](https://www.steelcon.info). Thanks for the inspiration guys.
