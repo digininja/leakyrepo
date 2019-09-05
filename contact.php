@@ -5,6 +5,9 @@ $error="";
 $success="";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	/*
+	Vulnerability scan says that this is bad, fix it
+	*/
 	$name = $_POST['name']; // required
 	$email = $_POST['email']; // required
 
