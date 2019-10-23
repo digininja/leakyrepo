@@ -61,3 +61,9 @@ Date:   Wed Jul 24 21:02:36 2019 +0100
 ```
 
 And as above, you can use the commit ID to then checkout the files and have a look at them.
+
+## Listing all filenames
+
+```
+git log --pretty=full --name-status --diff-filter=A --all
+```
