@@ -10,6 +10,7 @@ For now, you can have a play with tools like [Gitrob](https://github.com/michenr
 * Some SSH keys
 * A set of AWS keys
 * Database credentials
+* Secrets in workflow logs
 
 ## Credits
 
