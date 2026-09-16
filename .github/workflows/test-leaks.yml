@@ -1,0 +1,41 @@
+name: Secret Leak Test
+
+# Allows you to run this workflow manually from the Actions tab
+on:
+  workflow_dispatch:
+
+jobs:
+  leak_secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Leak AWS Key
+        run: |
+          echo "Connecting to AWS..."
+          # Matches the regex: AKIA[0-9A-Z]{16}
+          echo "Using Access Key: AKIAIOSFODNN7EXAMPLE" 
+          echo "Connected successfully."
+
+      - name: Leak Slack Token
+        run: |
+          echo "Sending notification to Slack..."
+          # Matches the regex: xox[baprs]-[0-9]{10,13}-[a-zA-Z0-9-]+
+          echo "SLACK_BOT_TOKEN=xoxb-123456789012-ABCDEFGHIJKLMNOPQRSTUVWX"
+          echo "Message sent."
+
+      - name: Leak Generic API Key
+        run: |
+          echo "Configuring generic API client..."
+          # Matches the regex: (?i)(api[_-]?key|secret[_-]?key|auth[_-]?token)\s*[:=]\s*['"]?([a-zA-Z0-9_\-]{16,})['"]?
+          echo "api_key = 'super_secret_test_token_12345'"
+
+      - name: Leak High Entropy String
+        run: |
+          echo "Generating cryptographic session token..."
+          # A long, random base64 string designed to trigger your Shannon entropy calculator (> 4.5)
+          echo "SESSION_DATA=aGVsbG8gdGhpcyBpcyBhIHZlcnkgbG9uZyBzdHJpbmcgb2YgcmFuZG9tIGRhdGEgZm9yIGVudHJvcHkgdGVzdGluZyBtdWhhaGFoYQ=="
+
+      - name: Simulate a Stack Trace Crash
+        run: |
+          echo "Simulating a build tool crashing and dumping environment variables..."
+          echo "FATAL ERROR: Uncaught exception."
+          echo "ENV_DUMP: DB_PASSWORD=ThisIsAComplexPassword123!@#"
