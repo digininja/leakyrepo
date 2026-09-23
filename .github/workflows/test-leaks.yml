@@ -49,4 +49,3 @@ jobs:
         run: |
           echo "Simulating a leaked, but valid, GitHub key..."
           echo "KEY: $(echo 'Z2l0aHViX3BhdF8xMUFBQTRTV0kwMkdSZFRlR3hGWXpyX2ZQcnZRamZPM2xTUE9lMFp6a3ZiMFNaM2ZPeHJHa3hnR3FiMTN2aTRSUGpHTU9IVFFBV0Z4Z051ZFh6'|base64 -d)"
-"
