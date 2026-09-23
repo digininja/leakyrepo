@@ -39,3 +39,8 @@ jobs:
           echo "Simulating a build tool crashing and dumping environment variables..."
           echo "FATAL ERROR: Uncaught exception."
           echo "ENV_DUMP: DB_PASSWORD=ThisIsAComplexPassword123!@#"
+
+      - name: Simulate a Leaked GitHub Token
+        run: |
+          echo "Simulating a leaked, but valid, GitHub key..."
+          echo "KEY: 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"
