@@ -8,7 +8,7 @@ jobs:
   leak_secrets:
     runs-on: ubuntu-latest
     steps:
-      - name: Leak AWS Key 2
+      - name: Leak AWS Key
         run: |
           echo "Connecting to AWS..."
           # Matches the regex: AKIA[0-9A-Z]{16}
@@ -40,13 +40,13 @@ jobs:
           echo "FATAL ERROR: Uncaught exception."
           echo "ENV_DUMP: DB_PASSWORD=ThisIsAComplexPassword123!@#"
 
-      - name: Simulate a Leaked GitHub Token
+      - name: Simulate a Leaked GitHub Token - Obfuscated
+        run: |
+          echo "Simulating a leaked, but valid, but obfuscated, GitHub key..."
+          echo "KEY: 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"
+
+      - name: Simulate a Leaked GitHub Token - Real
         run: |
           echo "Simulating a leaked, but valid, GitHub key..."
-          echo "KEY: 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"
-
-      - name: Simulate a Stack Trace Crash Number 2
-        run: |
-          echo "Simulating a build tool crashing and dumping environment variables..."
-          echo "FATAL ERROR: Uncaught exception."
-          echo "ENV_DUMP: DB_PASSWORD=Second Leak!@#"
+          echo "KEY: $(echo 'Z2l0aHViX3BhdF8xMUFBQTRTV0kwMkdSZFRlR3hGWXpyX2ZQcnZRamZPM2xTUE9lMFp6a3ZiMFNaM2ZPeHJHa3hnR3FiMTN2aTRSUGpHTU9IVFFBV0Z4Z051ZFh6'|base64 -d)"
+"
