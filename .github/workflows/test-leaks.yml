@@ -8,7 +8,7 @@ jobs:
   leak_secrets:
     runs-on: ubuntu-latest
     steps:
-      - name: Leak AWS Key
+      - name: Leak AWS Key 2
         run: |
           echo "Connecting to AWS..."
           # Matches the regex: AKIA[0-9A-Z]{16}
